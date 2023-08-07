@@ -7,9 +7,10 @@
 , pkg-config
 , gobject-introspection
 , gettext
-, gtk3
+, gtk4
 , gnome
-, wrapGAppsHook
+, wrapGAppsHook4
+, libadwaita
 , libgee
 , json-glib
 , qqwing
@@ -37,11 +38,12 @@ stdenv.mkDerivation rec {
     itstool
     libxml2
     desktop-file-utils
-    wrapGAppsHook
+    wrapGAppsHook4
   ];
 
   buildInputs = [
-    gtk3
+    gtk4
+    libadwaita
     libgee
     json-glib
     qqwing
