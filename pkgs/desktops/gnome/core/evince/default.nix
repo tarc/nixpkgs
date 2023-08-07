@@ -28,7 +28,6 @@
 , gobject-introspection
 , yelp-tools
 , gspell
-, adwaita-icon-theme
 , gsettings-desktop-schemas
 , gnome-desktop
 , dbus
@@ -67,7 +66,6 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    adwaita-icon-theme
     atk
     dbus # only needed to find the service directory
     djvulibre
