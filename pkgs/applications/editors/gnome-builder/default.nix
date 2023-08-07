@@ -19,7 +19,7 @@
 , libadwaita
 , libdex
 , libpanel
-, libpeas
+, libpeas2
 , libportal-gtk4
 , libxml2
 , meson
@@ -82,7 +82,7 @@ stdenv.mkDerivation rec {
     editorconfig-core-c
     flatpak
     libgit2-glib
-    libpeas
+    libpeas2
     libportal-gtk4
     vte-gtk4
     enchant
