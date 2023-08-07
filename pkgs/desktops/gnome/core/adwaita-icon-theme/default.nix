@@ -1,8 +1,9 @@
 { lib
 , stdenv
 , fetchurl
+, meson
+, ninja
 , pkg-config
-, autoreconfHook
 , gnome
 , gtk3
 , gdk-pixbuf
@@ -20,8 +21,9 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
+    meson
+    ninja
     pkg-config
-    autoreconfHook
     gtk3
   ];
 
