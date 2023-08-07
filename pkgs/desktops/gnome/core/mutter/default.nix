@@ -170,7 +170,7 @@ stdenv.mkDerivation (finalAttrs: {
   postFixup = ''
     # Cannot be in postInstall, otherwise _multioutDocs hook in preFixup will move right back.
     # TODO: Move this into a directory devhelp can find.
-    moveToOutput "share/mutter-12/doc" "$devdoc"
+    moveToOutput "share/mutter-13/doc" "$devdoc"
   '';
 
   # Install udev files into our own tree.
@@ -179,7 +179,7 @@ stdenv.mkDerivation (finalAttrs: {
   separateDebugInfo = true;
 
   passthru = {
-    libdir = "${finalAttrs.finalPackage}/lib/mutter-12";
+    libdir = "${finalAttrs.finalPackage}/lib/mutter-13";
 
     tests = {
       libdirExists = runCommand "mutter-libdir-exists" {} ''
