@@ -8,6 +8,7 @@
 , sassc
 , vala
 , gobject-introspection
+, appstream
 , fribidi
 , glib
 , gtk4
@@ -54,6 +55,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
+    appstream
     fribidi
   ] ++ lib.optionals stdenv.isDarwin [
     AppKit
