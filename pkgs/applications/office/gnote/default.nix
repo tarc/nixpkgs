@@ -3,8 +3,7 @@
 , fetchurl
 , desktop-file-utils
 , gettext
-, gspell
-, gtkmm3
+, gtkmm4
 , itstool
 , libsecret
 , libuuid
@@ -13,7 +12,7 @@
 , meson
 , ninja
 , pkg-config
-, wrapGAppsHook
+, wrapGAppsHook4
 , gnome
 }:
 
@@ -27,8 +26,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    gspell
-    gtkmm3
+    gtkmm4
     libsecret
     libuuid
     libxml2
@@ -42,7 +40,7 @@ stdenv.mkDerivation rec {
     meson
     ninja
     pkg-config
-    wrapGAppsHook
+    wrapGAppsHook4
   ];
 
   passthru = {
