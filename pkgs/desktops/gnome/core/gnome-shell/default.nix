@@ -28,7 +28,7 @@
 , libpulseaudio
 , libical
 , gobject-introspection
-, wrapGAppsHook
+, wrapGAppsHook4
 , libxslt
 , gcr_4
 , accountsservice
@@ -45,7 +45,6 @@
 , gjs
 , mutter
 , evolution-data-server-gtk4
-, gtk3
 , gtk4
 , libadwaita
 , sassc
@@ -115,7 +114,7 @@ stdenv.mkDerivation rec {
     docbook_xml_dtd_45
     gtk-doc
     perl
-    wrapGAppsHook
+    wrapGAppsHook4
     sassc
     desktop-file-utils
     libxslt.bin
@@ -140,7 +139,6 @@ stdenv.mkDerivation rec {
     libpulseaudio
     evolution-data-server-gtk4
     libical
-    gtk3
     gtk4
     libadwaita
     gdm
