@@ -8,11 +8,12 @@
 , json-glib
 , itstool
 , libadwaita
+, libdex
+, libpanel
 , libunwind
 , libxml2
 , meson
 , ninja
-, pango
 , pkg-config
 , polkit
 , shared-mime-info
@@ -48,10 +49,11 @@ stdenv.mkDerivation rec {
     glib
     gtk4
     json-glib
-    pango
     polkit
     systemd
     libadwaita
+    libdex
+    libpanel
     libunwind
   ];
 
