@@ -58,20 +58,6 @@
 , noSplash ? false
 }:
 
-let
-
-  clang_patched = llvmPackages_13.clang.cc.overrideAttrs (prev: {
-    version = "ROOT-patches-13";
-    sourceRoot = null;
-    src = fetchgit {
-      url = "http://root.cern/git/clang.git";
-      rev = "df7f1e41e8981335d4a6ce7f0fc89d1fdae08d57";
-      hash = "sha256-raEkRpxZoqHP8W6+UyOEUN+V3PQubMTcVg9a9cPqByY=";
-    };
-  });
-
-in
-
 stdenv.mkDerivation rec {
   pname = "root";
   version = "6.28.04";
@@ -90,7 +76,6 @@ stdenv.mkDerivation rec {
     nlohmann_json
   ];
   buildInputs = [
-    clang_patched.dev
     davix
     ftgl
     gl2ps
@@ -188,7 +173,6 @@ stdenv.mkDerivation rec {
     "-DCMAKE_INSTALL_BINDIR=bin"
     "-DCMAKE_INSTALL_LIBDIR=lib"
     "-DCMAKE_INSTALL_INCLUDEDIR=include"
-    "-Dbuiltin_clang=OFF"
     "-Dbuiltin_llvm=OFF"
     "-Dbuiltin_freetype=OFF"
     "-Dbuiltin_gtest=OFF"
