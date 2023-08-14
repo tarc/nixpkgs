@@ -27,6 +27,7 @@
 , libxkbcommon
 , libavif
 , libepoxy
+, libjxl
 , at-spi2-core
 , libxml2
 , libsoup
@@ -71,7 +72,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "webkitgtk";
-  version = "2.40.5";
+  version = "2.41.90";
   name = "${finalAttrs.pname}-${finalAttrs.version}+abi=${if lib.versionAtLeast gtk3.version "4.0" then "6.0" else "4.${if lib.versions.major libsoup.version == "2" then "0" else "1"}"}";
 
   outputs = [ "out" "dev" "devdoc" ];
@@ -82,7 +83,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "https://webkitgtk.org/releases/webkitgtk-${finalAttrs.version}.tar.xz";
-    hash = "sha256-feBRomNmhiHZGmGl6xw3cdGnzskABD1K/vBsMmwWA38=";
+    hash = "sha256-0frBmcORsOq8X58OK5DeTbOhSFtAKEhHsYD8apVjT+k=";
   };
 
   patches = lib.optionals stdenv.isLinux [
@@ -132,6 +133,7 @@ stdenv.mkDerivation (finalAttrs: {
     enchant2
     libavif
     libepoxy
+    libjxl
     gnutls
     gst-plugins-bad
     gst-plugins-base
