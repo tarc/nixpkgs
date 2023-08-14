@@ -150,10 +150,6 @@ failureHook = ''
     substituteInPlace interpreter/llvm/src/tools/clang/tools/driver/CMakeLists.txt \
       --replace 'add_clang_symlink(''${link} clang)' ""
 
-    substituteInPlace core/clingutils/CMakeLists.txt \
-      --replace 'if (NOT DEFINED CLANG_RESOURCE_DIR_VERSION)' 'if (FALSE)' \
-      --replace 'set(CLANG_RESOURCE_DIR' 'set(CLANG_RESOURCE_DIR "${llvmPackages_13.clang}/resource-root")#'
-
     # Don't require textutil on macOS
     : > cmake/modules/RootCPack.cmake
 
