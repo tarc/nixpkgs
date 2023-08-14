@@ -35,7 +35,6 @@
 , libxslt
 , harfbuzz
 , libpthreadstubs
-, pcre
 , nettle
 , libtasn1
 , p11-kit
@@ -52,7 +51,6 @@
 , openjpeg
 , geoclue2
 , sqlite
-, enableGLES ? true
 , gst-plugins-base
 , gst-plugins-bad
 , woff2
@@ -155,7 +153,6 @@ stdenv.mkDerivation (finalAttrs: {
     nettle
     openjpeg
     p11-kit
-    pcre
     sqlite
     woff2
   ] ++ (with xorg; [
@@ -221,8 +218,6 @@ stdenv.mkDerivation (finalAttrs: {
     "-DUSE_GTK4=ON"
   ] ++ lib.optionals (!systemdSupport) [
     "-DENABLE_JOURNALD_LOG=OFF"
-  ] ++ lib.optionals (stdenv.isLinux && enableGLES) [
-    "-DENABLE_GLES2=ON"
   ];
 
   postPatch = ''
