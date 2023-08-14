@@ -59,6 +59,10 @@
 }:
 
 stdenv.mkDerivation rec {
+VERBOSE=1;
+failureHook = ''
+  find . -name rootcling_stage1 -exec ldd {} \;
+'';
   pname = "root";
   version = "6.28.04";
 
