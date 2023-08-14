@@ -90,7 +90,7 @@ failureHook = ''
     lapack
     libxcrypt
     libxml2
-    llvm_13
+    (llvm_13.override { enableSharedLibraries = false; })
     lz4
     xz
     gsl
