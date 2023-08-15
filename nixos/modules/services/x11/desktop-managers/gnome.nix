@@ -474,7 +474,6 @@ in
         utils.removePackagesByName
           ([
             baobab
-            cheese
             eog
             epiphany
             pkgs.gnome-text-editor
@@ -494,6 +493,7 @@ in
             nautilus
             pkgs.gnome-connections
             simple-scan
+            pkgs.snapshot
             totem
             yelp
           ] ++ lib.optionals config.services.flatpak.enable [
